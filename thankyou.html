@@ -35,24 +35,18 @@
             color: rgb(255, 0, 0);
             font-weight: bold;
         }
-        div.button{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 6%;
-            width: 8%;
-            border: 3px solid black;
-            background-color: red;
-            border-radius: 8px;
-            box-sizing: border-box;
+        div.image p{
+            margin-top: 0;
+            margin-bottom: 0;
         }
-        div.button a{
-            text-decoration: none;
-            font-family: 'Inter';
-            color: white;
-
+        div.image a{
+            margin-top: 10px;
+            color: black;
         }
-        @media (max-width: 600px){
+        div.image p#terimakasih{
+            margin-top: 10px;
+        }
+        @media (max-width:600px){
             div.image p{
                 font-size: 16px;
             }
@@ -60,6 +54,19 @@
                 font-size: 18px;
             }
         }
+        @media(max-width: 416px){
+            div.image p{
+                font-size: 12px;
+            }
+            div.image p a{
+                font-size: 16px;
+            }
+            div.image img{
+                width: 20%;
+            }
+        }
+        
+        
     </style>
 </head>
 <body>
@@ -67,7 +74,9 @@
     <div class="container">
         <div class="image">
             <img src="img/L__2_-removebg-preview.png" alt="">
-            <p>Halo <a id="nama"></a>, terimakasih atas testing nya.</p> 
+            <p id="terimakasih">Halo <a id="nama"></a>, terimakasih atas testing nya.</p> 
+            <p>Klik link dibawah ini untuk melaporkan hasil testing: </p>
+            <a href="https://forms.gle/KEFf6NzFfi6q1TiE6">Klik Disini</a>
         </div>
     </div>
     <script src="script.js"></script>

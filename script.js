@@ -42,17 +42,17 @@ if (document.title == "Login Laporkuy!") {
          let newPassword = document.getElementById("password").value;
          let confirmPassword = document.getElementById("confirmPassword").value;
 
-         if (newPassword.length < 6 || newPassword.length > 15) {
-            alert("Panjang password 6-15 karakter");
-         } else if (newUsername.length < 6 || newUsername.length > 13) {
+         if (newUsername.length < 6 || newUsername.length > 13) {
             alert("Panjang username 6-15 karakter");
          } else if ("Username:" + newUsername in localStorage == true) {
             alert("Username telah digunakan, silahkan coba lagi.");
-         } else if ("Email:" + newEmail in localStorage == true) {
-            alert("Email telah digunakan, silahkan coba lagi.");
          } else if (checkUsername(newUsername)) {
             alert("Username tidak boleh berisi angka/simbol/spasi");
-         } else if (confirmPassword.includes(newPassword) == false) {
+         } else if ("Email:" + newEmail in localStorage == true) {
+            alert("Email telah digunakan, silahkan coba lagi.");
+         } else if (newPassword.length < 6 || newPassword.length > 15) {
+            alert("Panjang password 6-15 karakter");
+         } else if (newPassword == confirmPassword) {
             alert("Konfirmasi Password anda berbeda");
          } else if (checkPassword(newPassword)) {
             alert("Password tidak boleh berisi simbol atau spasi");
