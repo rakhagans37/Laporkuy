@@ -14,25 +14,29 @@ if (document.title == "Login Laporkuy!") {
    document
       .getElementById("login")
       .addEventListener("submit", function (event) {
-         event.preventDefault;
+         event.preventDefault();
          let username = document.getElementById("username").value;
          let password = document.getElementById("password").value;
-
          if (
             password == localStorage.getItem("Username:" + username) ||
             password == localStorage.getItem("Email:" + username)
          ) {
             alert("Login Berhasil");
-            window.location.href = "register.html";
+            localStorage.setItem("UsernameLogin", username);
+            window.location.href = "thankyou.html";
          } else {
             alert("Username atau Password salah");
          }
       });
-} else {
+} else if (document.title == "Thank You") {
+   console.log(localStorage.getItem("UsernameLogin"));
+   document.getElementById("nama").textContent =
+      localStorage.getItem("UsernameLogin");
+} else if ((document.title = "Registrasi Laporkuy!")) {
    document
       .getElementById("register")
       .addEventListener("submit", function (event) {
-         event.preventDefault;
+         event.preventDefault();
          let newUsername = document.getElementById("username").value;
          let newEmail = document.getElementById("email").value;
          let newPassword = document.getElementById("password").value;
