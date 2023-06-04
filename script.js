@@ -52,7 +52,7 @@ if (document.title == "Login Laporkuy!") {
             alert("Email telah digunakan, silahkan coba lagi.");
          } else if (newPassword.length < 6 || newPassword.length > 15) {
             alert("Panjang password 6-15 karakter");
-         } else if (newPassword == confirmPassword) {
+         } else if (newPassword != confirmPassword) {
             alert("Konfirmasi Password anda berbeda");
          } else if (checkPassword(newPassword)) {
             alert("Password tidak boleh berisi simbol atau spasi");
