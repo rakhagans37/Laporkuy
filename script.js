@@ -9,12 +9,18 @@ function checkPassword(password) {
 
    return simbol.test(password) + /\s/g.test(password);
 }
+function deleteElement(wantDelete) {
+   wantDelete.parentNode.removeChild(wantDelete);
+}
 
 if (document.title == "Login Laporkuy!") {
    document
       .getElementById("login")
       .addEventListener("submit", function (event) {
          event.preventDefault();
+         if (document.getElementById("passwordsalah")) {
+            deleteElement(document.getElementById("passwordsalah"));
+         }
          let username = document.getElementById("username").value;
          let password = document.getElementById("password").value;
          if (
@@ -25,7 +31,15 @@ if (document.title == "Login Laporkuy!") {
             localStorage.setItem("UsernameLogin", username);
             window.location.href = "thankyou.html";
          } else {
-            alert("Username atau Password salah");
+            let alertt = document.getElementById("second");
+            let tambahElemen = document.createElement("p");
+            tambahElemen.setAttribute("id", "passwordsalah");
+            tambahElemen.innerHTML = "Password Salah";
+            tambahElemen.setAttribute(
+               "style",
+               "color: red; font-family:'inter'; font-size: 12px; padding-left: 2px"
+            );
+            alertt.appendChild(tambahElemen);
          }
       });
 } else if (document.title == "Thank You") {
